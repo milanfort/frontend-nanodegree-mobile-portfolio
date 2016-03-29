@@ -23,5 +23,9 @@
     "nanodegree"
   ],
   "author": "Milan Fort <http://www.milanfort.com/>",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "del": "^2.0.2",
+    "gulp": "^3.9.0"
+  }
 }
