@@ -1,7 +1,10 @@
 var project = require('./package.json');
 var del = require('del');
 var gulp = require('gulp');
+var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
+var minify = require('gulp-minify-css');
+var prefix = require('gulp-autoprefixer');
 var htmlclean = require('gulp-htmlclean');
 var imagemin = require('gulp-imagemin');
 
@@ -28,6 +31,16 @@ gulp.task('images', function () {
         .pipe(gulp.dest(dest + '/images/'));
 });
 
+gulp.task('css', function () {
+    return gulp.src(source + '/main/css/*.css')
+        .pipe(minify())
+        .pipe(prefix({
+            browsers: ['last 2 versions', '> 2%'],
+            cascade: false
+        }))
+        .pipe(gulp.dest(dest + '/css/'))
+});
+
 gulp.task('js', function () {
     return gulp.src(source + '/main/js/**/*.js')
         .pipe(uglify())
@@ -40,6 +53,6 @@ gulp.task('html', function () {
         .pipe(gulp.dest(dest))
 });
 
-gulp.task('default', ['copy-main', 'copy-pizza', 'images', 'js', 'html'], function () {
+gulp.task('default', ['copy-pizza', 'images', 'css', 'js', 'html'], function () {
     console.log('Building %s version %s', project.name, project.version);
 });
