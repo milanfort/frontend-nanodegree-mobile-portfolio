@@ -49,7 +49,7 @@ gulp.task('js', function () {
 
 gulp.task('html', function () {
     return gulp.src(source + '/main/*.html')
-        //.pipe(htmlclean())
+        .pipe(htmlclean())
         .pipe(gulp.dest(dest))
 });
 
