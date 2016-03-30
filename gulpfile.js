@@ -1,6 +1,8 @@
 var project = require('./package.json');
 var del = require('del');
 var gulp = require('gulp');
+var uglify = require('gulp-uglify');
+var htmlclean = require('gulp-htmlclean');
 var imagemin = require('gulp-imagemin');
 
 var source = 'src';
@@ -11,8 +13,8 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('copy-main', function () {
-    return gulp.src([source + '/main/**/*.*', '!' + source + '/main/images/*.*'])
-        .pipe(gulp.dest(dest))
+    return gulp.src([source + '/main/css/*.css'])
+        .pipe(gulp.dest(dest + '/css'))
 });
 
 gulp.task('copy-pizza', function () {
@@ -26,6 +28,18 @@ gulp.task('images', function () {
         .pipe(gulp.dest(dest + '/images/'));
 });
 
-gulp.task('default', ['copy-main', 'copy-pizza', 'images'], function () {
+gulp.task('js', function () {
+    return gulp.src(source + '/main/js/**/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest(dest + '/js/'));
+});
+
+gulp.task('html', function () {
+    return gulp.src(source + '/main/*.html')
+        //.pipe(htmlclean())
+        .pipe(gulp.dest(dest))
+});
+
+gulp.task('default', ['copy-main', 'copy-pizza', 'images', 'js', 'html'], function () {
     console.log('Building %s version %s', project.name, project.version);
 });
