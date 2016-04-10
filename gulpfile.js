@@ -7,6 +7,7 @@ var minify = require('gulp-minify-css');
 var prefix = require('gulp-autoprefixer');
 var htmlclean = require('gulp-htmlclean');
 var imagemin = require('gulp-imagemin');
+var minifyInline = require('gulp-minify-inline');
 
 var source = 'src';
 var dest = 'dist';
@@ -44,6 +45,7 @@ gulp.task('js', function () {
 
 gulp.task('html', function () {
     return gulp.src(source + '/main/*.html')
+        .pipe(minifyInline())
         .pipe(htmlclean())
         .pipe(gulp.dest(dest))
 });
