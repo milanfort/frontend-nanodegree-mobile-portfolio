@@ -15,11 +15,6 @@ gulp.task('clean', function (done) {
     del([dest], done);
 });
 
-gulp.task('copy-main', function () {
-    return gulp.src([source + '/main/css/*.css'])
-        .pipe(gulp.dest(dest + '/css'))
-});
-
 gulp.task('copy-pizza', function () {
     return gulp.src(source + '/pizza/**/*.*')
         .pipe(gulp.dest(dest + '/pizza/'))
