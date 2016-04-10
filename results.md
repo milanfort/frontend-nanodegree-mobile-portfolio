@@ -14,7 +14,7 @@ of the web page.
 | 4       | 254ms                  | 774ms      | 75/100                    | 89/100                     |
 | 5       | 132ms                  | 440ms      | 85/100                    | 92/100                     |
 | 6       | 113ms                  | 397ms      | 85/100                    | 92/100                     |
-
+| 7       | 122ms                  | 364ms      | 92/100                    | 95/100
 
 ## Detailed Version Explanation
 
@@ -27,9 +27,10 @@ Moved scripts to the bottom of the page, defer execution/remove from CRP via asy
 Externalize script in order to allow browser caching.
 Minify scripts to reduce download size.
 
-4. Optimize CSS - Minify CSS, add media attribute for print stylesheet,
-(Inlining did not improve performance)
+4. Optimize CSS - Minify CSS, add media attribute for print stylesheet
 
 5. Avoid the use of Google Web Fonts, replace with generic fonts
 
 6. Minify HTML
+
+7. Inline critical CSS
