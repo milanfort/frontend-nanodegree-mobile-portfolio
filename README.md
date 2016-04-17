@@ -101,7 +101,9 @@ in order to make it work in older browsers
 * Invoke method `updatePositions()` inside
 [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
 
-* Fix forced synchronous layout (FSL) by moving computation involving _scrollTop_ property out of the for loop,
+* Fix forced synchronous layout (FSL) by moving computation involving
+[scrollTop](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop)
+property out of the for loop,
 and performing the style updates in batch.
 Accessing the scrollTop property, which causes browser to run layout, followed by the style updates within 
 the same loop was the cause of the FSL.
@@ -114,6 +116,6 @@ The following performance optimizations were performed in order to speed up resi
 * Remove duplication when querying the DOM for the same elements
  
 * Fix forced synchronous layout when resizing pizzas by moving computation of the new pizza size outside of the for loop
-and performing the size changes in batch.
+and performing the size changes in batch
 
 As a result, the time required to resize pizzas decreased from initial ca. 160ms to under 1ms.
