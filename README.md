@@ -117,6 +117,9 @@ The following performance optimizations were performed in order to speed up resi
 
 * Use [document.getElementById()](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
 instead of [document.querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
+
+* Use [document.getElementsByClassName()](https://developer.mozilla.org/en/docs/Web/API/Document/getElementsByClassName)
+instead of [document.querySelectorAll()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
  
 * Fix forced synchronous layout when resizing pizzas by moving computation of the new pizza size outside of the for loop
 and performing the size changes in batch
