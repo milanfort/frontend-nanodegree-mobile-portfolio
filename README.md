@@ -72,7 +72,7 @@ The following list outlines the performed optimization steps of the critical ren
 7. Inline critical CSS
 
 The table below shows the impact of each step on performance.
-Please not that the page load times depend on the network connection and other factors,
+Please note that the page load times depend on the network connection and other factors,
 and are therefore provided only for illustrative purposes.
 
 | Step    | DOMContentLoaded Event | Load Event | PageSpeed Insights Mobile | PageSpeed Insights Desktop |
@@ -114,6 +114,9 @@ the same loop was the cause of the FSL.
 The following performance optimizations were performed in order to speed up resizing of the pizza elements:
 
 * Remove duplication when querying the DOM for the same elements
+
+* Use [document.getElementById()](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
+instead of [document.querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
  
 * Fix forced synchronous layout when resizing pizzas by moving computation of the new pizza size outside of the for loop
 and performing the size changes in batch
