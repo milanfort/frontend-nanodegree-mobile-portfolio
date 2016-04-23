@@ -96,7 +96,7 @@ Include also the
 [Null transform hack](https://aerotwist.com/blog/on-translate3d-and-layer-creation-hacks/)
 in order to make it work in older browsers
 
-* Reduce the number of .mover elements from 200 to 40, which is enough to cover the whole screen 
+* Reduce the number of .mover elements by dynamically calculating the necessary count based on the browser window size
 
 * Invoke method `updatePositions()` inside
 [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
