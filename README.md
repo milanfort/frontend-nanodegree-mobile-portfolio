@@ -127,3 +127,10 @@ instead of [document.querySelectorAll()](https://developer.mozilla.org/en-US/doc
 and performing the size changes in batch
 
 As a result, the time required to resize pizzas decreased from initial ca. 160ms to under 1ms.
+
+
+## Final Note
+
+Please note that we made no attempt to improve the sub-par code quality of the provided code base.
+The only thing we focused on in this assignment was to fix the performance issues and optimize the web site,
+as discussed above.
