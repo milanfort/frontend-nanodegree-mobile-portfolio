@@ -493,7 +493,7 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.querySelectorAll('.mover');
+  var items = document.getElementsByClassName("mover");
 
   // Calculate top outside of the loop to avoid forced synchronous layout
   var top = (document.body.scrollTop / 1250);
