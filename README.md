@@ -120,6 +120,8 @@ instead of [document.querySelector()](https://developer.mozilla.org/en-US/docs/W
 
 * Use [document.getElementsByClassName()](https://developer.mozilla.org/en/docs/Web/API/Document/getElementsByClassName)
 instead of [document.querySelectorAll()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
+
+* Move document element retrieval outside of the for loop to prevent repeated retrieval of the same element 
  
 * Fix forced synchronous layout when resizing pizzas by moving computation of the new pizza size outside of the for loop
 and performing the size changes in batch
